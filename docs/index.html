@@ -127,7 +127,7 @@
             <div style="font-size:0.68rem;color:#718096;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.6rem;font-weight:600">Badges</div>
             <div style="font-size:0.78rem;color:#a0aec0;line-height:2">
                 🐦 Early Bird<br>
-                <span style="color:#4a5568;font-size:0.65rem">First 10 to register</span><br>
+                <span style="color:#4a5568;font-size:0.65rem">First 20 to register</span><br>
                 ⭐ Gold Star<br>
                 <span style="color:#4a5568;font-size:0.65rem">Completed Level 3</span><br>
                 🏆 Top Scorer<br>
@@ -169,12 +169,12 @@ fetch('data.json')
             const aTime = a._merged || '9999'; const bTime = b._merged || '9999';
             return aTime.localeCompare(bTime);
         });
-        const earlyBirds = new Set(sorted.slice(0, 10).map(d => d.name));
+        const earlyBirds = new Set(sorted.slice(0, 20).map(d => d.name));
 
         allData.forEach(d => {
             d._badges = [];
             // Early bird: first 10 to register
-            if (earlyBirds.has(d.name)) d._badges.push({icon:'🐦', tip:'Early Bird — among the first 10 to register'});
+            if (earlyBirds.has(d.name)) d._badges.push({icon:'🐦', tip:'Early Bird — among the first 20 to register'});
             // Gold star: completed Level 3
             if (d.level >= 3) d._badges.push({icon:'⭐', tip:'Gold Star — shipped a working deliverable'});
             // High scorer

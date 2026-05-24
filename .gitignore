@@ -3,3 +3,7 @@ dist/
 *.tsbuildinfo
 .DS_Store
 docs/intern-data/
+
+# Level 6 local secrets
+submissions/jv-singh/level6/.env
+submissions/jv-singh/level6/.streamlit/secrets.toml
